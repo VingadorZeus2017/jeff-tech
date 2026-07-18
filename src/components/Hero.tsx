@@ -68,7 +68,7 @@ export function Hero() {
             </a>
             
             <a
-              href="https://wa.me/5511960303782?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Jeff%20Tech!"
+              href="https://wa.me/5511963037821?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Jeff%20Tech!"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full flex items-center justify-center gap-2 backdrop-blur-md border border-white/10 transition-all hover:-translate-y-1"

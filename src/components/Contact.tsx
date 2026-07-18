@@ -77,7 +77,7 @@ export function Contact() {
               const text = `Olá, meu nome é ${nome}. Gostaria de um orçamento!\n\nDetalhes: ${mensagem}\nMeu email: ${email}`;
               
               // Ajuste o número aqui caso esteja incorreto. Apenas números e com DDI 55
-              const whatsappNumber = "5511960303782"; 
+              const whatsappNumber = "5511963037821"; 
               const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
               window.open(whatsappUrl, '_blank');
             }}>

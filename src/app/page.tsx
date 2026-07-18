@@ -26,7 +26,7 @@ export default function Home() {
       
       {/* Botão Flutuante do WhatsApp */}
       <a 
-        href="https://wa.me/5511960303782?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Jeff%20Tech!"
+        href="https://wa.me/5511963037821?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Jeff%20Tech!"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all z-50 animate-bounce"
