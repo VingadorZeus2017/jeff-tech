@@ -34,7 +34,7 @@ export function About() {
             
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-black border border-white/10 p-6 rounded-2xl shadow-xl backdrop-blur-xl">
-              <p className="text-4xl font-bold text-primary mb-1">+10</p>
+              <p className="text-4xl font-bold text-primary mb-1">4</p>
               <p className="text-sm text-gray-400 font-medium">Anos de<br/>Experiência</p>
             </div>
           </motion.div>

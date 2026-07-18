@@ -28,8 +28,8 @@ export function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Telefone / WhatsApp</p>
-                  <p className="text-lg font-medium text-white">(00) 00000-0000</p>
+                  <p className="text-sm text-gray-400">Atendimento Exclusivo</p>
+                  <p className="text-lg font-medium text-white">Via WhatsApp</p>
                 </div>
               </div>
               
@@ -49,7 +49,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Atendimento</p>
-                  <p className="text-lg font-medium text-white">Local e Domicílio (Sua Cidade - UF)</p>
+                  <p className="text-lg font-medium text-white">Local e Domicílio (Guarulhos - SP)</p>
                 </div>
               </div>
             </div>
@@ -67,42 +67,51 @@ export function Contact() {
 
           {/* Contact Form */}
           <div className="bg-black/50 border border-white/10 p-8 md:p-10 rounded-3xl backdrop-blur-xl">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const nome = formData.get('name');
+              const email = formData.get('email');
+              const mensagem = formData.get('message');
+              
+              const text = `Olá, meu nome é ${nome}. Gostaria de um orçamento!\n\nDetalhes: ${mensagem}\nMeu email: ${email}`;
+              
+              // Ajuste o número aqui caso esteja incorreto. Apenas números e com DDI 55
+              const whatsappNumber = "5511960303782"; 
+              const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
+            }}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-gray-300">Nome Completo</label>
                   <input 
                     type="text" 
                     id="name"
+                    name="name"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                     placeholder="Seu nome"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium text-gray-300">Telefone / WhatsApp</label>
+                  <label htmlFor="email" className="text-sm font-medium text-gray-300">E-mail</label>
                   <input 
-                    type="text" 
-                    id="phone"
+                    type="email" 
+                    id="email"
+                    name="email"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                    placeholder="(00) 00000-0000"
+                    placeholder="seu@email.com"
                   />
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-300">E-mail</label>
-                <input 
-                  type="email" 
-                  id="email"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                  placeholder="seu@email.com"
-                />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-gray-300">Mensagem</label>
                 <textarea 
                   id="message"
+                  name="message"
+                  required
                   rows={4}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
                   placeholder="Descreva o seu problema ou solicite um orçamento..."
@@ -113,7 +122,7 @@ export function Contact() {
                 type="submit"
                 className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
               >
-                Enviar Mensagem
+                Enviar Mensagem no WhatsApp
                 <Send className="w-5 h-5" />
               </button>
             </form>
